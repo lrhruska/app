@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id         :integer          not null, primary key
+#  this       :string(255)
+#  that       :string(255)
+#  postTime   :datetime
+#  lat        :float
+#  long       :float
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  this: MyString
+  that: MyString
+  postTime: 2015-03-12 17:26:09
+  lat: 1.5
+  long: 1.5
+
+two:
+  this: MyString
+  that: MyString
+  postTime: 2015-03-12 17:26:09
+  lat: 1.5
+  long: 1.5
