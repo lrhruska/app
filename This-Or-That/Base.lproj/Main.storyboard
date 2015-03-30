@@ -65,8 +65,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7KE-UT-MCQ"/>
                     <connections>
-                        <outlet property="greetingId" destination="l4T-6B-w49" id="lpA-IS-pRA"/>
-                        <outlet property="greetingThis" destination="Ys9-ON-D78" id="RLU-mT-Gdi"/>
+                        <outlet property="greetingId" destination="l4T-6B-w49" id="Odk-hY-6Bb"/>
+                        <outlet property="greetingThis" destination="Ys9-ON-D78" id="R3g-oB-JAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

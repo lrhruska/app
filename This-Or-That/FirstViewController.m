@@ -15,10 +15,12 @@
 
 @implementation FirstViewController
 
+int cnt = 12;
+
 - (IBAction)fetchGreeting;
 {
     NSLog(@"Hello");
-    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/newQuestion?this=Stanford&that=Berkeley"];
+    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/getQuestions"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
@@ -27,13 +29,22 @@
      {
          if (data.length > 0 && connectionError == nil)
          {
-             NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
+             NSArray *results = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:NULL];
              
-             self.greetingId.text = [[results objectForKey:@"id"] stringValue];
-             self.greetingThis.text = [results objectForKey:@"this"];
+           //  self.greetingId.text = [[results objectForKey:@"id"] stringValue];
+           //  self.greetingThis.text = [results objectForKey:@"this"];
+           //  NSArray *resultArray = [results objectForKey:@"id"];
              
+             /*this fails for null values and out of bounds of json array*/
+             self.greetingId.text = [[results[cnt] objectForKey:@"id"] stringValue];
+             self.greetingThis.text = [results[cnt] objectForKey:@"this"];
+             
+             //cnt is the index of the json array. stop at 15 since last element.
+             if(cnt < 15) {
+                 cnt++;
+             }
          }
      }];
 }
