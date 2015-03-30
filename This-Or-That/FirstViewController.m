@@ -42,7 +42,8 @@ int cnt = 12;
              self.greetingThis.text = [results[cnt] objectForKey:@"this"];
              
              //cnt is the index of the json array. stop at 15 since last element.
-             if(cnt < 15) {
+             //if cnt < size of array-1
+             if(cnt < [results count]-1) {
                  cnt++;
              }
          }
