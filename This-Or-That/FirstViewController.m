@@ -15,11 +15,10 @@
 
 @implementation FirstViewController
 
-int cnt = 12;
+int cnt = 0;
 
-- (IBAction)fetchGreeting;
+- (IBAction)fetchGreeting
 {
-    NSLog(@"Hello");
     NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/getQuestions"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
@@ -32,10 +31,6 @@ int cnt = 12;
              NSArray *results = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:NULL];
-             
-           //  self.greetingId.text = [[results objectForKey:@"id"] stringValue];
-           //  self.greetingThis.text = [results objectForKey:@"this"];
-           //  NSArray *resultArray = [results objectForKey:@"id"];
              
              /*this fails for null values and out of bounds of json array*/
              self.greetingId.text = [[results[cnt] objectForKey:@"id"] stringValue];

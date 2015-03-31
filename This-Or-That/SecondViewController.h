@@ -10,6 +10,9 @@
 
 @interface SecondViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextField *thisString;
+@property (nonatomic, strong) IBOutlet UITextField *thatString;
 
+- (IBAction) newQuestion;
 @end
 
