@@ -16,6 +16,8 @@
 		3949EE4F1AA9714D0073CDD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3949EE4D1AA9714D0073CDD8 /* LaunchScreen.xib */; };
 		3949EE5B1AA9714D0073CDD8 /* This_Or_ThatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3949EE5A1AA9714D0073CDD8 /* This_Or_ThatTests.m */; };
 		D236F7051AF98ED5007BAF72 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F7041AF98ED5007BAF72 /* HomeController.m */; };
+		D236F70B1AF9971A007BAF72 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F70A1AF9971A007BAF72 /* TableViewController.m */; };
+		D236F70E1AF9976C007BAF72 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F70D1AF9976C007BAF72 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		3949EE5A1AA9714D0073CDD8 /* This_Or_ThatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = This_Or_ThatTests.m; sourceTree = "<group>"; };
 		D236F7031AF98ED5007BAF72 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		D236F7041AF98ED5007BAF72 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		D236F7091AF9971A007BAF72 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D236F70A1AF9971A007BAF72 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		D236F70C1AF9976C007BAF72 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		D236F70D1AF9976C007BAF72 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,10 @@
 		3949EE2F1AA9714C0073CDD8 = {
 			isa = PBXGroup;
 			children = (
+				D236F70C1AF9976C007BAF72 /* TableViewCell.h */,
+				D236F70D1AF9976C007BAF72 /* TableViewCell.m */,
+				D236F7091AF9971A007BAF72 /* TableViewController.h */,
+				D236F70A1AF9971A007BAF72 /* TableViewController.m */,
 				D236F7031AF98ED5007BAF72 /* HomeController.h */,
 				D236F7041AF98ED5007BAF72 /* HomeController.m */,
 				3949EE3A1AA9714C0073CDD8 /* This-Or-That */,
@@ -229,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D236F70E1AF9976C007BAF72 /* TableViewCell.m in Sources */,
 				3949EE471AA9714D0073CDD8 /* SecondViewController.m in Sources */,
+				D236F70B1AF9971A007BAF72 /* TableViewController.m in Sources */,
 				3949EE411AA9714D0073CDD8 /* AppDelegate.m in Sources */,
 				3949EE441AA9714D0073CDD8 /* FirstViewController.m in Sources */,
 				D236F7051AF98ED5007BAF72 /* HomeController.m in Sources */,
