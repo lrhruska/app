@@ -13,11 +13,14 @@
 @end
 
 @implementation TableViewController
-
+static NSArray* thisOrThats;
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self loadQuestionData];
     self.tableView.estimatedRowHeight = 60;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    NSLog(@"Questions: %@", self.thisOrThats);
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -25,6 +28,29 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
++ (void) setQuestionData:(NSArray*) questions {
+     thisOrThats = questions;
+}
+
+//- (void) loadQuestionData {
+//    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/calpoly/getQuestions"];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [NSURLConnection sendAsynchronousRequest:request
+//                                       queue:[NSOperationQueue mainQueue]
+//                           completionHandler:^(NSURLResponse *response,
+//                                               NSData *data, NSError *connectionError)
+//     {
+//         if (data.length > 0 && connectionError == nil)
+//         {
+//             NSArray *results = [NSJSONSerialization JSONObjectWithData:data
+//                                                                options:0
+//                                                                  error:NULL];
+//             self.thisOrThats = results;
+////             [self.myView reloadData];
+//         }
+//     }];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,20 +64,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 2;
+    return [thisOrThats count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
+    int row = indexPath.row;
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.this.text = @"Test This";
-    cell.that.text = @"Test That";
-    cell.time.text = @"10 days ago";
+    
+    
+    cell.this.text = [thisOrThats[row] objectForKey:@"this"];
+    cell.that.text = [thisOrThats[row] objectForKey:@"that"];
+    cell.time.text = [thisOrThats[row] objectForKey:@"created_at"];
+
     return cell;
 }
 

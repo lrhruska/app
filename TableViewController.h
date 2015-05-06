@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 @class TableViewCell;
 @interface TableViewController : UITableViewController
-
+@property (strong, atomic) IBOutlet UITableView* myView;
+- (void) loadQuestionData;
++ (void) setQuestionData:(NSArray*) questions;
 @end

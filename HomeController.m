@@ -8,6 +8,7 @@
 
 #import "HomeController.h"
 @import CoreLocation;
+#import "TableViewController.h"
 @interface HomeController ()
 
 @end
@@ -67,9 +68,28 @@
              //             self.greetingId.text = [[results[cnt] objectForKey:@"id"] stringValue];
              //             self.greetingThis.text = [results[cnt] objectForKey:@"this"];
              self.schoolTitle.text = self.schoolName;
+             [self loadQuestions];
          }
      }];
     
+}
+
+- (void) loadQuestions {
+    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/getQuestions"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             NSArray *results = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:0
+                                                                  error:NULL];
+             [TableViewController setQuestionData: results];
+         }
+     }];
 }
 
 /*

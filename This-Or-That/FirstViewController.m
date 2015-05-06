@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-
+#import "TableViewController.h"
 
 @interface FirstViewController ()
 
@@ -19,7 +19,7 @@ int cnt = 0;
 
 - (IBAction)fetchGreeting
 {
-    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/getQuestions"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/calpoly/getQuestions"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
@@ -31,16 +31,7 @@ int cnt = 0;
              NSArray *results = [NSJSONSerialization JSONObjectWithData:data
                                                                       options:0
                                                                         error:NULL];
-             
-             /*this fails for null values and out of bounds of json array*/
-             self.greetingId.text = [[results[cnt] objectForKey:@"id"] stringValue];
-             self.greetingThis.text = [results[cnt] objectForKey:@"this"];
-             
-             //cnt is the index of the json array. stop at 15 since last element.
-             //if cnt < size of array-1
-             if(cnt < [results count]-1) {
-                 cnt++;
-             }
+             [TableViewController setQuestionData: results];
          }
      }];
 }
