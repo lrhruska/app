@@ -10,6 +10,6 @@
 @class TableViewCell;
 @interface TableViewController : UITableViewController
 @property (strong, atomic) IBOutlet UITableView* myView;
+@property NSArray* thisOrThats;
 - (void) loadQuestionData;
-+ (void) setQuestionData:(NSArray*) questions;
 @end

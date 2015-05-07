@@ -49,6 +49,8 @@
              NSLog(@"Your Connection Sucks");
          }
      }];
+    [self.thisString resignFirstResponder];
+    [self.thatString resignFirstResponder];
 }
 
 @end

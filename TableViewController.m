@@ -13,13 +13,12 @@
 @end
 
 @implementation TableViewController
-static NSArray* thisOrThats;
+//static NSArray* thisOrThats;
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loadQuestionData];
+    [self loadQuestionData];
     self.tableView.estimatedRowHeight = 60;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    NSLog(@"Questions: %@", self.thisOrThats);
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -29,28 +28,25 @@ static NSArray* thisOrThats;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-+ (void) setQuestionData:(NSArray*) questions {
-     thisOrThats = questions;
-}
 
-//- (void) loadQuestionData {
-//    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/calpoly/getQuestions"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [NSURLConnection sendAsynchronousRequest:request
-//                                       queue:[NSOperationQueue mainQueue]
-//                           completionHandler:^(NSURLResponse *response,
-//                                               NSData *data, NSError *connectionError)
-//     {
-//         if (data.length > 0 && connectionError == nil)
-//         {
-//             NSArray *results = [NSJSONSerialization JSONObjectWithData:data
-//                                                                options:0
-//                                                                  error:NULL];
-//             self.thisOrThats = results;
-////             [self.myView reloadData];
-//         }
-//     }];
-//}
+- (void) loadQuestionData {
+    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/getQuestions"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             NSArray *results = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:0
+                                                                  error:NULL];
+             self.thisOrThats = results;
+             [self.myView reloadData];
+         }
+     }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -64,7 +60,7 @@ static NSArray* thisOrThats;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [thisOrThats count];
+    return [self.thisOrThats count];
 }
 
 
@@ -76,12 +72,18 @@ static NSArray* thisOrThats;
         cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    
-    cell.this.text = [thisOrThats[row] objectForKey:@"this"];
-    cell.that.text = [thisOrThats[row] objectForKey:@"that"];
-    cell.time.text = [thisOrThats[row] objectForKey:@"created_at"];
+    [cell.this adjustsFontSizeToFitWidth];
+    [cell.that adjustsFontSizeToFitWidth];
+    [cell.time adjustsFontSizeToFitWidth];
+    cell.this.text = [self.thisOrThats[row] objectForKey:@"this"];
+    cell.that.text = [self.thisOrThats[row] objectForKey:@"that"];
+    cell.time.text = @"4 days ago";
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
 }
 
 

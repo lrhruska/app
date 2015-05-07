@@ -20,10 +20,12 @@
     // Configure the view for the selected state
 }
 - (IBAction)voteThis {
+    NSLog(@"Vote This");
     return;
 }
 
 - (IBAction)voteThat{
+    NSLog(@"Vote That");
     return;
 }
 
