@@ -23,12 +23,46 @@
     int currVote = [self.thisVote.text intValue];
     currVote += 1;
     self.thisVote.text = @(currVote).stringValue;
+    
+    
+    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/vote/2?this=true"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"PATCH"];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (connectionError != nil)
+         {
+             NSLog(@"Your Connection Sucks");
+         }
+     }];
+
 }
 
 - (IBAction)voteThat{
     int currVote = [self.thatVote.text intValue];
     currVote += 1;
     self.thatVote.text = @(currVote).stringValue;
+    
+    NSURL *url = [NSURL URLWithString:@"https://boiling-headland-8319.herokuapp.com/calpoly/vote/2"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"PATCH"];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (connectionError != nil)
+         {
+             NSLog(@"Your Connection Sucks");
+         }
+     }];
 }
 
 @end

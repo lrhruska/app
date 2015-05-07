@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel* that;
 @property (weak, nonatomic) IBOutlet UILabel* thatVote;
 @property (weak, nonatomic) IBOutlet UILabel* time;
+@property NSInteger* questionNum;
 - (IBAction) voteThis;
 - (IBAction) voteThat;
 

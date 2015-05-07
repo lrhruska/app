@@ -82,11 +82,12 @@
     [cell.time adjustsFontSizeToFitWidth];
     cell.this.text = [self.thisOrThats[row] objectForKey:@"this"];
     cell.that.text = [self.thisOrThats[row] objectForKey:@"that"];
-    int thisVote = (int) [self.thisOrThats[row] objectForKey:@"thisVote"];
-    int thatVote = (int) [self.thisOrThats[row] objectForKey:@"thatVote"];
+    int thisVote =  [[self.thisOrThats[row] objectForKey:@"thisVote"] intValue];
+    int thatVote = [[self.thisOrThats[row] objectForKey:@"thatVote"] intValue];
     cell.thisVote.text = @(thisVote).stringValue;
     cell.thatVote.text = @(thatVote).stringValue;
     cell.time.text = @"4 days ago";
+    cell.questionNum = [[self.thisOrThats[row] objectForKey:@"id"] intValue];
 
     return cell;
 }
