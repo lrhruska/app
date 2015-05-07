@@ -10,7 +10,9 @@
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel* this;
+@property (weak, nonatomic) IBOutlet UILabel* thisVote;
 @property (weak, nonatomic) IBOutlet UILabel* that;
+@property (weak, nonatomic) IBOutlet UILabel* thatVote;
 @property (weak, nonatomic) IBOutlet UILabel* time;
 - (IBAction) voteThis;
 - (IBAction) voteThat;

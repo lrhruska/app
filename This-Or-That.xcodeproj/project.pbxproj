@@ -14,7 +14,6 @@
 		3949EE4C1AA9714D0073CDD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3949EE4B1AA9714D0073CDD8 /* Images.xcassets */; };
 		3949EE4F1AA9714D0073CDD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3949EE4D1AA9714D0073CDD8 /* LaunchScreen.xib */; };
 		3949EE5B1AA9714D0073CDD8 /* This_Or_ThatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3949EE5A1AA9714D0073CDD8 /* This_Or_ThatTests.m */; };
-		D236F7051AF98ED5007BAF72 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F7041AF98ED5007BAF72 /* HomeController.m */; };
 		D236F70B1AF9971A007BAF72 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F70A1AF9971A007BAF72 /* TableViewController.m */; };
 		D236F70E1AF9976C007BAF72 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D236F70D1AF9976C007BAF72 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -43,8 +42,6 @@
 		3949EE541AA9714D0073CDD8 /* This-Or-ThatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "This-Or-ThatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3949EE591AA9714D0073CDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3949EE5A1AA9714D0073CDD8 /* This_Or_ThatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = This_Or_ThatTests.m; sourceTree = "<group>"; };
-		D236F7031AF98ED5007BAF72 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
-		D236F7041AF98ED5007BAF72 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		D236F7091AF9971A007BAF72 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		D236F70A1AF9971A007BAF72 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D236F70C1AF9976C007BAF72 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
@@ -76,8 +73,6 @@
 				D236F70D1AF9976C007BAF72 /* TableViewCell.m */,
 				D236F7091AF9971A007BAF72 /* TableViewController.h */,
 				D236F70A1AF9971A007BAF72 /* TableViewController.m */,
-				D236F7031AF98ED5007BAF72 /* HomeController.h */,
-				D236F7041AF98ED5007BAF72 /* HomeController.m */,
 				3949EE3A1AA9714C0073CDD8 /* This-Or-That */,
 				3949EE571AA9714D0073CDD8 /* This-Or-ThatTests */,
 				3949EE391AA9714C0073CDD8 /* Products */,
@@ -238,7 +233,6 @@
 				3949EE471AA9714D0073CDD8 /* SecondViewController.m in Sources */,
 				D236F70B1AF9971A007BAF72 /* TableViewController.m in Sources */,
 				3949EE411AA9714D0073CDD8 /* AppDelegate.m in Sources */,
-				D236F7051AF98ED5007BAF72 /* HomeController.m in Sources */,
 				3949EE3E1AA9714D0073CDD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,13 +20,15 @@
     // Configure the view for the selected state
 }
 - (IBAction)voteThis {
-    NSLog(@"Vote This");
-    return;
+    int currVote = [self.thisVote.text intValue];
+    currVote += 1;
+    self.thisVote.text = @(currVote).stringValue;
 }
 
 - (IBAction)voteThat{
-    NSLog(@"Vote That");
-    return;
+    int currVote = [self.thatVote.text intValue];
+    currVote += 1;
+    self.thatVote.text = @(currVote).stringValue;
 }
 
 @end
